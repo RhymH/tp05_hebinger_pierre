@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Client } from "../modules/client";
 import {Router} from '@angular/router';
 import {AppComponent} from '../app.component';
+import {ClientService} from '../modules/client.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-formulaire-client',
@@ -12,7 +14,7 @@ export class FormulaireClientComponent implements OnInit {
 
   public client: Client;
 
-  constructor(private router: Router, private app: AppComponent) { }
+  constructor(private router: Router, private app: AppComponent, private clientService: ClientService) { }
 
   ngOnInit(): void {
 
@@ -33,14 +35,19 @@ export class FormulaireClientComponent implements OnInit {
 
   }
 
+
+  obsclient: Observable<Client>;
+
   save(model: Client, isValid: boolean){
     if(isValid){
       this.client = model;
-      this.app.client = model;
 
-      this.router.navigate(['recap']);
+      this.obsclient = this.clientService.postClient(model);
+      this.obsclient.subscribe(res => console.log(res));
+
+      //this.router.navigate(['recap']);
     }
-    console.log(model, isValid);
+    //console.log("envoie",model, isValid);
   }
 
 }

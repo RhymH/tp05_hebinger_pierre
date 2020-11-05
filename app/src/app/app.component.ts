@@ -9,6 +9,4 @@ import {Client} from './modules/client';
 export class AppComponent {
   title = 'app';
 
-  public client: Client;
-
 }

@@ -2,23 +2,23 @@
 
   <h1>Récap client</h1>
   <br>
-  <p id="lastname">{{client.nom}}</p>
-  <p id="firstname">{{client.prenom}}</p>
+  <p id="lastname">{{(client | async).nom}}</p>
+  <p id="firstname">{{(client | async).prenom}}</p>
 
-  <p id="adress">{{client.adresse}}</p>
-  <p id="postal">{{client.codepostal}}</p>
-  <p id="city">{{client.ville}}</p>
-  <p id="country">{{client.pays}}</p>
+  <p id="adress">{{(client | async).adresse}}</p>
+  <p id="postal">{{(client | async).codepostal}}</p>
+  <p id="city">{{(client | async).ville}}</p>
+  <p id="country">{{(client | async).pays}}</p>
 
-  <p id="phone">{{client.tel | tel}}</p>
+  <p id="phone">{{(client | async).tel | tel}}</p>
 
-  <p id="email">{{client.mail}}</p>
+  <p id="email">{{(client | async).mail}}</p>
   <br>
-  <p id="civilite">{{client.civilite}}</p>
+  <p id="civilite">{{(client | async).civilite}}</p>
   <br>
 
   <div>
-    <p id="password">{{client.passwd}}</p>
-    <p id="passwordconf">{{client.passwdConf}}</p>
+    <p id="password">{{(client | async).passwd}}</p>
+    <p id="passwordconf">{{(client | async).passwdConf}}</p>
   </div>
 </div>
