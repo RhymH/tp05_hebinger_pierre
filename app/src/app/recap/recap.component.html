@@ -1,0 +1,24 @@
+<div id="recap">
+
+  <h1>Récap client</h1>
+  <br>
+  <p id="lastname">{{client.nom}}</p>
+  <p id="firstname">{{client.prenom}}</p>
+
+  <p id="adress">{{client.adresse}}</p>
+  <p id="postal">{{client.codepostal}}</p>
+  <p id="city">{{client.ville}}</p>
+  <p id="country">{{client.pays}}</p>
+
+  <p id="phone">{{client.tel | tel}}</p>
+
+  <p id="email">{{client.mail}}</p>
+  <br>
+  <p id="civilite">{{client.civilite}}</p>
+  <br>
+
+  <div>
+    <p id="password">{{client.passwd}}</p>
+    <p id="passwordconf">{{client.passwdConf}}</p>
+  </div>
+</div>
