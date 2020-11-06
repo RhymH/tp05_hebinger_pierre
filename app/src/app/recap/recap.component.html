@@ -1,24 +1,29 @@
 <div id="recap">
 
-  <h1>Récap client</h1>
-  <br>
-  <p id="lastname">{{(client | async).nom}}</p>
-  <p id="firstname">{{(client | async).prenom}}</p>
+  <div *ngIf="client | async as thisclient">
 
-  <p id="adress">{{(client | async).adresse}}</p>
-  <p id="postal">{{(client | async).codepostal}}</p>
-  <p id="city">{{(client | async).ville}}</p>
-  <p id="country">{{(client | async).pays}}</p>
+    <h1>Récap client</h1>
+    <br>
+    <p id="lastname">{{thisclient.nom}}</p>
+    <p id="firstname">{{thisclient.prenom}}</p>
 
-  <p id="phone">{{(client | async).tel | tel}}</p>
+    <p id="adress">{{thisclient.adresse}}</p>
+    <p id="postal">{{thisclient.codepostal}}</p>
+    <p id="city">{{thisclient.ville}}</p>
+    <p id="country">{{thisclient.pays}}</p>
 
-  <p id="email">{{(client | async).mail}}</p>
-  <br>
-  <p id="civilite">{{(client | async).civilite}}</p>
-  <br>
+    <p id="phone">{{thisclient.tel | tel}}</p>
 
-  <div>
-    <p id="password">{{(client | async).passwd}}</p>
-    <p id="passwordconf">{{(client | async).passwdConf}}</p>
+    <p id="email">{{thisclient.mail}}</p>
+    <br>
+    <p id="civilite">{{thisclient.civilite}}</p>
+    <br>
+
+    <div>
+      <p id="password">{{thisclient.passwd}}</p>
+      <p id="passwordconf">{{thisclient.passwdConf}}</p>
+    </div>
+
   </div>
+
 </div>

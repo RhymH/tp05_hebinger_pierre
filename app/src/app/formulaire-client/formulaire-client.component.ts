@@ -31,8 +31,6 @@ export class FormulaireClientComponent implements OnInit {
       passwdConf: '',
       civilite: ''
     }
-
-
   }
 
 
@@ -40,14 +38,16 @@ export class FormulaireClientComponent implements OnInit {
 
   save(model: Client, isValid: boolean){
     if(isValid){
+
       this.client = model;
 
       this.obsclient = this.clientService.postClient(model);
       this.obsclient.subscribe(res => console.log(res));
 
-      //this.router.navigate(['recap']);
+      this.router.navigate(['recap']);
     }
-    //console.log("envoie",model, isValid);
+    console.log("envoie" + isValid);
+
   }
 
 }

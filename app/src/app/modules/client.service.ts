@@ -8,13 +8,22 @@ import {Client} from './client';
 })
 export class ClientService {
 
-  client: Observable<Client>;
+  client: Observable<Client> = new Observable<Client>();
 
-  constructor(private http: HttpClient) {  }
+  constructor(private http: HttpClient) {
+
+    this.client.subscribe(res => console.log("VOILA" + res));
+
+  }
 
   public postClient(client :Client): Observable<Client> {
-    this.client = this.http.post<Client>('http://localhost/addClient', client);
+
+    this.client = this.http.post<Client>('/api/client', client);
+
     return this.client;
+
+
+
   }
 
 
