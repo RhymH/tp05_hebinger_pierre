@@ -14,7 +14,7 @@ export class FormulaireClientComponent implements OnInit {
 
   public client: Client;
 
-  constructor(private router: Router, private app: AppComponent, private clientService: ClientService) { }
+  constructor(private router: Router, private clientService: ClientService) { }
 
   ngOnInit(): void {
 

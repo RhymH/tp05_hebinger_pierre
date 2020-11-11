@@ -11,6 +11,7 @@ const routes: Routes = [
   {path: 'details/:id', loadChildren: () => import('../../details/details.module').then(m => m.DetailsModule)},
   {path: 'client', loadChildren: () => import('../../formulaire-client/formulaire-client.module').then(m => m.FormulaireClientModule)},
   {path: 'recap', loadChildren: () => import('../../recap/recap.module').then(m => m.RecapModule)},
+  {path: 'login', loadChildren: () => import('../../login/login.module').then(m => m.LoginModule)},
   {
     path: '**',
     redirectTo: ''

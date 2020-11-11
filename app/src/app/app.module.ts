@@ -17,6 +17,8 @@ import {CatalogueModule} from './catalogue/catalogue.module';
 import {DetailsModule} from './details/details.module';
 import {CartModule} from './cart/cart.module';
 import {RecapModule} from './recap/recap.module';
+import { LoginComponent } from './login/login.component';
+import {LoginModule} from './login/login.module';
 
 
 @NgModule({
@@ -38,7 +40,8 @@ import {RecapModule} from './recap/recap.module';
     CatalogueModule,
     DetailsModule,
     CartModule,
-    RecapModule
+    RecapModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

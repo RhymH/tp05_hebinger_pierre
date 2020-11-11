@@ -12,7 +12,7 @@ export class ClientService {
 
   constructor(private http: HttpClient) {
 
-    this.client.subscribe(res => console.log("VOILA" + res));
+    this.client.subscribe(res => console.log("TestClient " + res));
 
   }
 
@@ -21,8 +21,6 @@ export class ClientService {
     this.client = this.http.post<Client>('/api/client', client);
 
     return this.client;
-
-
 
   }
 
