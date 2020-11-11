@@ -47,7 +47,7 @@ function addClient($request,$response,$args) {
     header('Access-Control-Allow-Methods: GET, POST, OPTIONS');
     header('Access-Control-Allow-Headers: Content-Type, Authorization, X-Requested-With');*/
 
-    return $response->withHeader("Content-Type", "application/json")->withJson (json_encode($body));
+    return $response->withHeader("Content-Type", "application/json")->withJson ($body);
 }
 
 
@@ -86,7 +86,7 @@ function loginClient($request,$response,$args) {
 
     $response = $response->withHeader("Authorization", "Bearer {$token_jwt}");
 
-    return $response->withHeader("Content-Type", "application/json")->write (json_encode($body));
+    return $response->withHeader("Content-Type", "application/json")->withJson ($body);
 }
 
 
